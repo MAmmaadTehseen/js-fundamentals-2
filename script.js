@@ -1,5 +1,5 @@
 `use strict`;
-
+//-----------------------------------------------------------------------------------//
 //var is function level scope
 //let is block level scope
 
@@ -18,21 +18,34 @@ console.log(typeof b);
 console.log(b);
 //alert
 //alert(true);
-
+//-----------------------------------------------------------------------------------//
 //Nullish coalescing operator '??'
 //The nullish coalescing operator (??) is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
 
-let user;
-console.log(user ?? "Anonymous"); // Anonymous
+// let user;
+// console.log(user ?? "Anonymous"); // Anonymous
+// //-----------------------------------------------------------------------------------//
+// //  break <labelName>
+// outer: for (let i = 0; i < 3; i++) {
+//   for (let j = 0; j < 3; j++) {
+//     // let input = prompt(`Value at coords (${i},${j})`, "");
 
-//  break <labelName>
-outer: for (let i = 0; i < 3; i++) {
-  for (let j = 0; j < 3; j++) {
-    let input = prompt(`Value at coords (${i},${j})`, "");
-
-    // what if we want to exit from here to Done (below)?
-    if (!input) break outer;
-  }
-}
+//     // what if we want to exit from here to Done (below)?
+//     if (!input) break outer;
+//   }
+// }
 
 console.log("Done!");
+//-----------------------------------------------------------------------------------//
+//objects
+let user = {
+  name: "Muhammad Ammad Tehseen",
+  id: 0,
+  age: 21,
+  "favourite personality": "Muhammad(SAW)",
+};
+console.log(user.age);
+console.log("favourite personality" in user);
+
+//-----------------------------------------------------------------------------------//
+//for in loop
