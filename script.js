@@ -49,3 +49,28 @@ console.log("favourite personality" in user);
 
 //-----------------------------------------------------------------------------------//
 //for in loop
+for (key in user) {
+  console.log(key);
+  console.log(user[key]);
+}
+//copy a object
+let clone = Object.assign({}, user);
+clone.name = "Ammad";
+console.log(clone);
+console.log(user);
+
+//structured clone
+Object.assign(user, { lenght: { cm: 10, inch: 20 } });
+let clone2 = structuredClone(user);
+clone2.lenght.cm = 20;
+console.log(clone2);
+
+//-----------------------------------------------------------------------------------//
+//constructor function
+function User(name, age) {
+  this.name = name;
+  this.age = age;
+  this.isAdmin = false;
+}
+let newUser = new User("bopinder jogi", 21);
+console.log(newUser);
