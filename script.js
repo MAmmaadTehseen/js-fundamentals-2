@@ -74,3 +74,15 @@ function User(name, age) {
 }
 let newUser = new User("bopinder jogi", 21);
 console.log(newUser);
+
+//-----------------------------------------------------------------------------------//
+// for of
+let arr = ["Ammad", "Ali", "Tehseen"];
+for (let value of arr) {
+  console.log(value);
+}
+
+//-----------------------------------------------------------------------------------//
+//Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
+
+function 
