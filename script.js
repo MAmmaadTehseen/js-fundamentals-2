@@ -83,6 +83,3 @@ for (let value of arr) {
 }
 
 //-----------------------------------------------------------------------------------//
-//Given an integer array arr and a mapping function fn, return a new array with a transformation applied to each element.
-
-function 
