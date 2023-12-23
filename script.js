@@ -99,3 +99,37 @@ console.log(convertToTitle(701));
 //-----------------------------------------------------------------------------------//
 
 //-----------------------------------------------------------------------------------//
+var findMedianSortedArrays = function (nums1, nums2) {
+  nums1 = nums1.concat(nums2);
+  nums1.sort((a, b) => a - b);
+  if (nums1.length % 2 == 0) {
+    return (nums1[nums1.length / 2] + nums1[nums1.length / 2 - 1]) / 2;
+  } else {
+    return nums1[Math.floor(nums1.length / 2)];
+  }
+};
+
+console.log(findMedianSortedArrays([1, 2, 5], [3, 4, 6]));
+
+var threeSum = function (nums) {
+  let ar = [];
+  for (let i = 0; i < nums.length - 2; i++) {
+    for (let j = i + 1; j < nums.length - 1; j++) {
+      for (let k = j + 1; k < nums.length; k++) {
+        if (nums[i] + nums[j] + nums[k] == 0) {
+          ar = ar.concat([nums[i], nums[j], nums[k]]);
+        }
+      }
+    }
+  }
+  return ar;
+};
+
+console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+
+var removeDuplicates = function (nums) {
+  let se = new Set(nums);
+  nums = Array.from(se);
+  return nums;
+};
+console.log(removeDuplicates([1, 1, 3, 5, 6, 2, 1, 2]));
