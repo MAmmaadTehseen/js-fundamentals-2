@@ -81,7 +81,7 @@ let arr = ["Ammad", "Ali", "Tehseen"];
 for (let value of arr) {
   console.log(value);
 }
-
+//-----------------------------------------------------------------------------------//
 var convertToTitle = function (columnNumber) {
   let num = columnNumber;
   let str = String.fromCodePoint((num % 26) + 64);
@@ -96,3 +96,5 @@ var convertToTitle = function (columnNumber) {
 };
 
 console.log(convertToTitle(701));
+
+//-----------------------------------------------------------------------------------//
