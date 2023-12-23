@@ -81,3 +81,18 @@ let arr = ["Ammad", "Ali", "Tehseen"];
 for (let value of arr) {
   console.log(value);
 }
+
+var convertToTitle = function (columnNumber) {
+  let num = columnNumber;
+  let str = String.fromCodePoint((num % 26) + 64);
+  while (num > 26) {
+    num /= 26;
+    num = Number.parseInt(num);
+    // return num;
+
+    str = str + String.fromCodePoint((num != 26 ? num % 26 : 26) + 64);
+  }
+  return str.split("").reverse().join("");
+};
+
+console.log(convertToTitle(701));
