@@ -122,7 +122,7 @@ var removeDuplicates = function (nums) {
   return nums;
 };
 console.log(removeDuplicates([1, 1, 3, 5, 6, 2, 1, 2]));
-nums = "10010100";
+nums = "10";
 var minOperations = function (s) {
   let length = s.length;
   let ones = 0;
