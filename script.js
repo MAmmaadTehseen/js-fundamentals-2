@@ -122,36 +122,93 @@ var removeDuplicates = function (nums) {
   return nums;
 };
 console.log(removeDuplicates([1, 1, 3, 5, 6, 2, 1, 2]));
-nums = "10010100";
+nums = "010";
 var minOperations = function (s) {
-  let length = s.length;
-  let ones = 0;
-  for (let i = 0; i < length; i++) {
-    if (s[i] == 1) {
-      ones++;
+  let change0to1StartWith0 = 0;
+  let change1to0StartWith1 = 0;
+
+  // Iterate through the string for the case starting with '0'
+  for (let i = 0; i < s.length; i++) {
+    if (i % 2 === 0) {
+      if (s[i] !== "0") {
+        change0to1StartWith0++;
+      }
+    } else {
+      if (s[i] !== "1") {
+        change0to1StartWith0++;
+      }
     }
   }
-  let ns = "";
-  let zeros = length - ones;
-  if (zeros > ones) {
-    ns += "0";
-    for (let i = 0; i < length; i++) {
-      ns += ns[ns.length - 1] == 0 ? "1" : "0";
-    }
-    // return ns;
-  } else {
-    ns = "1";
-    for (let i = 0; i < length; i++) {
-      ns += ns[ns.length - 1 == 0 ? "1" : "0"];
-    }
-  }
-  let count = 0;
-  for (let i = 0; i < length; i++) {
-    if (ns[i] != s[i]) {
-      count++;
+
+  // Iterate through the string for the case starting with '1'
+  for (let i = 0; i < s.length; i++) {
+    if (i % 2 === 0) {
+      if (s[i] !== "1") {
+        change1to0StartWith1++;
+      }
+    } else {
+      if (s[i] !== "0") {
+        change1to0StartWith1++;
+      }
     }
   }
-  return count;
+
+  // Return the minimum number of operations needed
+  return Math.min(change0to1StartWith0, change1to0StartWith1);
 };
 
 console.log(minOperations(nums));
+
+function minOperationsToAlternate(s) {
+  let change0to1 = 0;
+  let change1to0 = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    if (i % 2 === 0) {
+      if (s[i] !== "0") {
+        change1to0++;
+      } else {
+        change0to1++;
+      }
+    } else {
+      if (s[i] !== "1") {
+        change0to1++;
+      } else {
+        change1to0++;
+      }
+    }
+  }
+
+  return Math.min(change0to1, change1to0);
+}
+
+// Example usage:
+const s = "1110010";
+const result = minOperationsToAlternate(s);
+console.log(result);
+
+function largestOddNumber(num) {
+  let currentSubstring = "";
+  let result = "";
+
+  for (const digit of num) {
+    const currentDigit = parseInt(digit);
+
+    if (currentDigit % 2 === 1) {
+      // Include the odd digit in the current substring
+      currentSubstring += digit;
+    }
+
+    // Update the result if the current substring is larger
+    if (currentSubstring.length > result.length) {
+      result = currentSubstring;
+    }
+  }
+
+  return result;
+}
+
+// Example usage:
+const num = "35427";
+const result1 = largestOddNumber(num);
+console.log(result1);
