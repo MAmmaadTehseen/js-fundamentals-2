@@ -122,3 +122,36 @@ var removeDuplicates = function (nums) {
   return nums;
 };
 console.log(removeDuplicates([1, 1, 3, 5, 6, 2, 1, 2]));
+nums = "10010100";
+var minOperations = function (s) {
+  let length = s.length;
+  let ones = 0;
+  for (let i = 0; i < length; i++) {
+    if (s[i] == 1) {
+      ones++;
+    }
+  }
+  let ns = "";
+  let zeros = length - ones;
+  if (zeros > ones) {
+    ns += "0";
+    for (let i = 0; i < length; i++) {
+      ns += ns[ns.length - 1] == 0 ? "1" : "0";
+    }
+    // return ns;
+  } else {
+    ns = "1";
+    for (let i = 0; i < length; i++) {
+      ns += ns[ns.length - 1 == 0 ? "1" : "0"];
+    }
+  }
+  let count = 0;
+  for (let i = 0; i < length; i++) {
+    if (ns[i] != s[i]) {
+      count++;
+    }
+  }
+  return count;
+};
+
+console.log(minOperations(nums));
