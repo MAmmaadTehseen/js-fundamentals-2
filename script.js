@@ -212,3 +212,25 @@ function largestOddNumber(num) {
 const num = "35427";
 const result1 = largestOddNumber(num);
 console.log(result1);
+// string to array
+let str = "35474";
+let arr1 = str.split("");
+
+console.log(+arr1[0]);
+
+var numDecodings = function (s) {
+  let ways = s.length;
+  if (+s[0] == 0) {
+    return 0;
+  }
+  for (let i = 0; i < s.length; i++) {
+    if (+(s[i] + s[i + 1]) > 9 && +(s[i] + s[i + 1]) < 27) {
+      ways++;
+    }
+    if (+s[i] == 0) {
+      ways--;
+    }
+  }
+  return ways;
+};
+console.log(numDecodings("226"));
