@@ -84,37 +84,10 @@ for (let value of arr) {
 //-----------------------------------------------------------------------------------//
 var convertToBase7 = function (num) {
   let base = "";
-  // while (num > 7) {
-  //   base += num % 7;
-  //   num /= 7;
-  //   Number.parseInt(num);
-  // }
+
   return num.toString(7);
-  return base;
+  
 };
 
 console.log(convertToBase7(100));
 //-----------------------------------------------------------------------------------//
-
-var findRelativeRanks = function (score) {
-  let scoreNew = score.slice();
-  scoreNew.sort((a, b) => b - a);
-  let result = [];
-  for (let i = 0; i < score.length; i++) {
-    let index = scoreNew.indexOf(score[i]);
-    if (index === 0) {
-      result.push("Gold Medal");
-    } else if (index === 1) {
-      result.push("Silver Medal");
-    } else if (index === 2) {
-      result.push("Bronze Medal");
-    } else {
-      result.push(index + 1);
-    }
-  }
-  for (let i = 0; i < score.length; i++) {
-    score[i] = result[i];
-  }
-};
-
-console.log(findRelativeRanks([10, 3, 8, 9, 4]));
