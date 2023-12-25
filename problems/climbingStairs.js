@@ -1,3 +1,6 @@
+//this problem wants us to find how many ways we can climb to the top of a staircase with n steps
+//we can either climb 1 or 2 steps at a time
+
 var climbStairs = function (n) {
   let arr = [];
   arr[0] = 1;

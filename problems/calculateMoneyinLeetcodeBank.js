@@ -1,3 +1,8 @@
+//this problem wants us to calculate the total amount of money you will have in your bank account after n weeks
+//the first monday you will have 1 dollar in your bank account
+//the second monday you will have 2 dollars in your bank account
+
+
 var totalMoney = function (n) {
   let total = 0;
   let current = 1;
